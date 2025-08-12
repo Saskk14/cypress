@@ -1,8 +1,8 @@
 describe('Проверка покупки нового аватара', function () {                 // название набора тестов
     it('e2e тест на покупку нового аватара для тренера', function () {   // название теста
          cy.visit('https://pokemonbattle.ru/');                          // переходим на сайт https://pokemonbattle.ru/
-         cy.get('input[id="k_email"]').type('kuptsovkon@yandex.ru');                   // вводим логин
-         cy.get('input[id="k_password"]').type('13Kiss13!');               // вводим пароль
+         cy.get('input[id="k_email"]').type('USER_LOGIN');                   // вводим логин
+         cy.get('input[id="k_password"]').type('USER_PASSWORD');               // вводим пароль
          cy.get('button[type="submit"]').click();                // нажимаем кнопку Подтвердить
          cy.wait(2000);
          cy.get('.header_card_trainer').click();            // Клик в шапке на аву тренера
@@ -18,4 +18,5 @@ describe('Проверка покупки нового аватара', function
          cy.get('.style_1_base_button_payment_body > .style_1_base_button_payment').click();   // нажимаем кнопку Оплатить
          cy.contains('Покупка прошла успешно').should('be.visible');     // проверяем наличие и видимость сообщения об успешной покупке
      });
+
  });
